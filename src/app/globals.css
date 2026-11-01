@@ -1,51 +1,60 @@
 @import "tailwindcss";
 
-:root {
-  --paper-dark: #070b08;
-  --paper-light: #ebf3ea;
-  --ink-dark: #ebf3ea;
-  --ink-light: #070b08;
-  --brand: #62d468;
-  --brand-text-dark: #62d468;
-  --brand-text-light: #1e7a35;
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
-  /* Default theme (dark) */
+:root {
+  /* Default to Dark Theme */
   --paper: #070b08;
   --ink: #ebf3ea;
   --ink-muted: rgba(235, 243, 234, 0.65);
   --hairline: rgba(235, 243, 234, 0.12);
-  --surface: #0e1510;
+  --brand: #62d468;
   --brand-text: #62d468;
+  --surface: #0e1510;
 
-  --background: var(--paper);
-  --foreground: var(--ink);
+  --scrollbar-thumb: rgba(235, 243, 234, 0.2);
+  --scrollbar-thumb-hover: rgba(235, 243, 234, 0.35);
+  --scrollbar-track: #070b08;
+
+  color-scheme: dark;
 }
 
-.theme-dark,
 [data-theme="dark"] {
   --paper: #070b08;
   --ink: #ebf3ea;
   --ink-muted: rgba(235, 243, 234, 0.65);
   --hairline: rgba(235, 243, 234, 0.12);
-  --surface: #0e1510;
+  --brand: #62d468;
   --brand-text: #62d468;
-  --background: var(--paper);
-  --foreground: var(--ink);
+  --surface: #0e1510;
+
+  --scrollbar-thumb: rgba(235, 243, 234, 0.2);
+  --scrollbar-thumb-hover: rgba(235, 243, 234, 0.35);
+  --scrollbar-track: #070b08;
+
+  color-scheme: dark;
 }
 
-.theme-light,
 [data-theme="light"] {
   --paper: #ebf3ea;
   --ink: #070b08;
   --ink-muted: rgba(7, 11, 8, 0.65);
   --hairline: rgba(7, 11, 8, 0.14);
+  --brand: #62d468;
+  --brand-text: #1e7a35; /* Verified > 4.5:1 contrast against #ebf3ea */
   --surface: #e1ebe0;
-  --brand-text: #1e7a35;
-  --background: var(--paper);
-  --foreground: var(--ink);
+
+  --scrollbar-thumb: rgba(7, 11, 8, 0.2);
+  --scrollbar-thumb-hover: rgba(7, 11, 8, 0.35);
+  --scrollbar-track: #ebf3ea;
+
+  color-scheme: light;
 }
 
 @theme inline {
+  --font-serif: var(--font-dm-serif-display), Georgia, serif;
+  --font-sans: var(--font-dm-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
   --color-paper: var(--paper);
   --color-ink: var(--ink);
   --color-ink-muted: var(--ink-muted);
@@ -54,13 +63,134 @@
   --color-brand-text: var(--brand-text);
   --color-surface: var(--surface);
 
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --text-display: clamp(3.25rem, 9vw, 9rem);
+  --text-display--line-height: 0.95;
+  --text-display--letter-spacing: -0.02em;
+
+  --text-h2: clamp(2.5rem, 6vw, 5.5rem);
+  --text-h2--line-height: 1.0;
+  --text-h2--letter-spacing: -0.015em;
+
+  --text-h3: clamp(1.5rem, 2.6vw, 2.25rem);
+  --text-h3--line-height: 1.15;
+
+  --text-body-lg: 1.1875rem;
+  --text-body: 1.0625rem;
+  --text-body--line-height: 1.6;
+  --text-small: 0.875rem;
+
+  /* Section padding — fluid, ~64px to 128px. Used as py on every section. */
+  --section-py: clamp(4rem, 8vw, 8rem);
+}
+
+/* Base Document Styles */
+html {
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
 }
 
 body {
   background-color: var(--paper);
   color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
   margin: 0;
   padding: 0;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Dark theme specific adjustments: lighter weight (400) and line-height +0.05 */
+[data-theme="dark"] body {
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 9999px;
+  border: 2px solid var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+/* Shift section — pre-paint hidden states.
+   DEFAULT / static fallback (no `.js`, reduced motion, or below breakpoint):
+   BEFORE struck through at 25% opacity, strike at full text width, AFTERs
+   and notes at full strength. Nothing hidden — content is never gated by JS.
+
+   Animated (desktop + `.js` + no-reduced-motion):
+   strikes start scaleX(0), AFTERs and notes start opacity 0; the timeline
+   drives them on scroll. */
+[data-shift="before"] {
+  opacity: 0.25;
+}
+[data-shift="strike"] {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+@media (min-width: 768px) and (min-height: 600px) and (prefers-reduced-motion: no-preference) {
+  .js [data-shift="strike"] {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  .js [data-shift="after-word"] {
+    opacity: 0;
+  }
+  .js [data-shift="note"],
+  .js [data-shift="final-note"] {
+    opacity: 0;
+  }
+}
+@media (max-width: 767px) {
+  /* With JS + motion, AFTER words and notes start hidden, then reveal on enter. */
+  .js [data-shift="after-word"],
+  .js [data-shift="note"],
+  .js [data-shift="final-note"] {
+    opacity: 0;
+  }
+}
+
+/* Lenis Smooth Scroll Recommended Styles */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.lenis,
+  html.lenis body {
+    scroll-behavior: auto !important;
+  }
 }

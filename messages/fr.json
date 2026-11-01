@@ -1,0 +1,157 @@
+{
+  "nav": {
+    "howItWorks": "Comment ça marche",
+    "work": "Le travail",
+    "about": "À propos",
+    "pricing": "Tarifs",
+    "faq": "FAQ",
+    "bookCall": "Réserver un appel"
+  },
+  "hero": {
+    "h1Lead": "Votre expertise, ",
+    "h1Em": "enfin visible",
+    "h1Trail": " sur LinkedIn.",
+    "sub": "Contenu LinkedIn et optimisation de profil, clés en main, pour fondateurs et professionnels. Tout est écrit et conçu par moi, personnellement.",
+    "primaryCta": "Réserver un appel gratuit de 30 minutes",
+    "secondaryCta": "Voir comment ça marche",
+    "microLine": "Avant notre échange, j'analyse votre profil.",
+    "portraitAlt": "Héléna Clinckart, fondatrice d'Helia Studio"
+  },
+  "problem": {
+    "h2": "Votre prochain client a déjà regardé votre profil.",
+    "body": "Avant de répondre à votre message, d'accepter votre invitation ou de réserver un appel, il vérifie qui vous êtes. Si votre titre est vague et que votre section À propos ressemble à toutes les autres, il se décide en quelques secondes. Pas parce que vous manquez de talent, mais parce que rien ne le montre.",
+    "closingLine": "Vous excellez dans votre domaine. Votre profil le montre-t-il ?"
+  },
+  "shift": {
+    "h2": "Du flou au clair en une ligne.",
+    "body": "Votre titre est la première chose que l'on lit. Il doit dire qui vous aidez et ce qui change pour eux.",
+    "examples": [
+      {
+        "before": "CEO & Founder | Passionné par la croissance",
+        "beforeNote": "Qui aidez-vous ?",
+        "afterLead": "J'aide les coachs en ligne à ",
+        "afterEm": "remplir leurs programmes"
+      },
+      {
+        "before": "Consultant en stratégie | J'aide les entreprises à réussir",
+        "beforeNote": "Réussir comment, pour qui ?",
+        "afterLead": "J'aide les fondateurs B2B à bâtir un processus de vente qui ",
+        "afterEm": "tourne sans eux"
+      },
+      {
+        "before": "Designer freelance | Créatif | Ouvert aux opportunités",
+        "beforeNote": "Ouvert à quoi, et pour qui ?",
+        "afterLead": "Je conçois des identités visuelles pour les ",
+        "afterEm": "restaurants indépendants"
+      }
+    ],
+    "finalNote": "Clair en quelques secondes.",
+    "caption": "Exemples illustratifs."
+  },
+  "offers": {
+    "h2": "Deux choses, bien faites.",
+    "offer1": {
+      "title": "Votre profil, repensé.",
+      "body": "Votre titre, votre section À propos et votre bannière réécrits pour qu'on comprenne ce que vous faites et qui vous aidez, et pour que les bonnes personnes vous trouvent.",
+      "includes": "Titre · À propos · Expérience · Bannière · Mots-clés · Paramètres"
+    },
+    "offer2": {
+      "title": "Votre contenu, clé en main.",
+      "body": "Je trouve les sujets, j'écris des publications qui vous ressemblent, je conçois les visuels et je programme le tout. Vous restez l'expert. Je m'occupe du reste.",
+      "includes": "Sujets · Publications à votre image · Visuels · Programmation · Rapport mensuel"
+    }
+  },
+  "work": {
+    "h2": "Le travail, en public.",
+    "intro": "Tout ce que je fais pour mes clients, je le fais d'abord pour moi. Deux publications récentes de mon propre profil.",
+    "post1": {
+      "title": "4 types of writers you can hire",
+      "description": "Un carrousel sur le bon profil à recruter selon le besoin : ghostwriter, copywriter, rédacteur de contenu, stratège de contenu.",
+      "figures": "20,000+ impressions · 256 réactions · 65 commentaires",
+      "date": "octobre 2026"
+    },
+    "post2": {
+      "title": "You don't need to publish more LinkedIn content",
+      "description": "Un court rappel à soi-même sur la qualité plutôt que le volume.",
+      "figures": "10,000+ impressions · 83 réactions · 48 commentaires",
+      "date": "octobre 2026"
+    },
+    "sourceLine": "Chiffres issus des statistiques LinkedIn, octobre 2026.",
+    "cta": "Vous voulez la même chose pour votre profil ? Réservez un appel."
+  },
+  "process": {
+    "h2": "Comment nous travaillons ensemble.",
+    "step1": "Un appel de 30 minutes. Nous parlons de ce que vous faites et de qui vous voulez toucher. Avant de nous parler, j'analyse votre profil.",
+    "step2": "Semaine 1 : un profil clair. Votre titre, votre section À propos et votre bannière, réécrits pour qu'on comprenne ce que vous faites en quelques secondes.",
+    "step3": "Ensuite : du contenu à votre image. Je trouve les sujets, j'écris les publications, je conçois les visuels et je les programme. Vous me donnez vos retours directement, aussi souvent que nécessaire.",
+    "step4": "Chaque mois : ce qui a fonctionné. Un court rapport sur ce qui performe, pour que le mois suivant soit meilleur que le précédent."
+  },
+  "about": {
+    "h2": "Vous travaillez avec moi. Directement.",
+    "body": "Je m'occupe de tout moi-même : la rédaction, le design, la publication. Pas de chargé de compte, pas d'intermédiaire, pas de processus compliqué. Si vous voulez changer quelque chose, vous me le dites.",
+    "languages": "Je travaille en français et en anglais.",
+    "definitionCaption": "Héléna Clinckart est la fondatrice de Helia Studio. Elle écrit et conçoit du contenu LinkedIn et repense les profils de fondateurs et de professionnels, en anglais et en français."
+  },
+  "pricing": {
+    "h2": "Des tarifs simples et fixes.",
+    "sub": "TVA incluse. Aucun frais caché.",
+    "trustEngine": {
+      "title": "The Trust Engine",
+      "tagline": "Je gère votre LinkedIn pour vous.",
+      "price": "$1,700 par mois",
+      "terms": "3 mois pour démarrer, puis résiliable à tout moment.",
+      "includes": "Optimisation de profil · 7 publications par semaine, rédigées et conçues pour vous · Un appel stratégique hebdomadaire · Retours illimités · Un rapport mensuel sur ce qui fonctionne",
+      "option": "Anglais + français : 14 publications par semaine, sans doubler le prix.",
+      "cta": "Parler du Trust Engine"
+    },
+    "strategicAdvisor": {
+      "title": "The Strategic Advisor",
+      "tagline": "Vous écrivez, je vous guide chaque semaine.",
+      "price": "$850 par mois",
+      "includes": "Profile Blueprint inclus · Retour vidéo Loom chaque semaine sur vos publications · Deux plans de publication par semaine",
+      "cta": "Parler de ma stratégie de contenu"
+    },
+    "profileBlueprint": {
+      "title": "The LinkedIn Profile Blueprint",
+      "tagline": "Une refonte de profil, en une fois. Idéal pour les professionnels et les personnes en recherche d'emploi.",
+      "price": "$500 une fois",
+      "includes": "Titre, À propos et Expérience réécrits · Mots-clés pour que les bonnes personnes vous trouvent · Checklist des paramètres",
+      "cta": "Refaire mon profil"
+    }
+  },
+  "faq": {
+    "h2": "FAQ",
+    "q1": "Que fait Helia Studio ?",
+    "a1": "Helia Studio, dirigé par Héléna Clinckart, écrit et conçoit du contenu LinkedIn pour des fondateurs et des professionnels, et repense leurs profils pour qu'on comprenne ce qu'ils font et qui ils aident.",
+    "q2": "Qui fera réellement le travail ?",
+    "a2": "Moi. J'écris, je conçois, je programme et je publie tout moi-même. Il n'y a ni équipe ni intermédiaire, et vous me donnez vos retours directement.",
+    "q3": "Les publications me ressembleront-elles ?",
+    "a3": "C'est l'objectif. Je trouve des sujets pertinents et j'écris des publications qui vous ressemblent, et vous me dites directement ce qu'il faut changer jusqu'à ce que ce soit le cas.",
+    "q4": "Écrivez-vous en français et en anglais ?",
+    "a4": "Oui, je travaille dans les deux langues. Le Trust Engine peut couvrir les deux, à raison de 14 publications par semaine.",
+    "q5": "Avec qui travaillez-vous ?",
+    "a5": "Des fondateurs, consultants, coachs, conseillers et indépendants : toute personne dont le prochain client regarde le LinkedIn avant de la contacter.",
+    "q6": "Que se passe-t-il pendant l'appel de découverte ?",
+    "a6": "Il dure 30 minutes. Nous parlons de ce que vous faites et de qui vous voulez toucher, je vous dis où en est votre profil, et nous voyons si je suis la bonne personne pour vous. J'analyse votre profil avant notre échange.",
+    "q7": "Suis-je engagé sur la durée ?",
+    "a7": "Le Trust Engine démarre avec 3 mois, puis il est résiliable à tout moment. Le Profile Blueprint est un achat unique.",
+    "q8": "Garantissez-vous des résultats ?",
+    "a8": "Personne ne peut honnêtement garantir une audience ou des clients sur LinkedIn. Ce que je maîtrise, c'est la clarté et la régularité : un profil qui explique ce que vous faites, et un contenu qui montre ce que vous savez."
+  },
+  "finalCta": {
+    "h2": "Faisons en sorte que votre profil montre ce que vous valez.",
+    "primaryCta": "Réserver un appel gratuit de 30 minutes",
+    "secondaryCta": "Ou envoyez-moi un message sur LinkedIn."
+  },
+  "footer": {
+    "description": "Helia Studio. Ghostwriting LinkedIn et optimisation de profil par Héléna Clinckart.",
+    "links": {
+      "linkedin": "LinkedIn",
+      "book": "Réserver un appel",
+      "privacy": "Politique de confidentialité",
+      "legal": "Mentions légales"
+    },
+    "copyright": "© 2026 Helia Studio"
+  }
+}
+
