@@ -73,8 +73,9 @@ FR: Comment ça marche · Le travail · À propos · Tarifs · FAQ · Réserver 
 
 ---
 ## 4. What I do
-**H2 EN:** Two things, done properly.
-**H2 FR:** Deux choses, bien faites.
+**H2 EN:** Two things, *done properly*.
+**H2 FR:** Deux choses, *bien faites*.
+(The italic phrase is the single emphasised phrase, in brand-text colour.)
 
 **Offer 1 title EN:** Your profile, rebuilt.
 **Offer 1 title FR:** Votre profil, repensé.
@@ -90,13 +91,16 @@ FR: Comment ça marche · Le travail · À propos · Tarifs · FAQ · Réserver 
 **Offer 2 includes EN:** Topics · Posts in your voice · Visuals · Scheduling · Monthly report
 **Offer 2 includes FR:** Sujets · Publications à votre image · Visuels · Programmation · Rapport mensuel
 
+**Link EN / FR:** See pricing / Voir les tarifs
+(One shared key `offers.pricingLink`, used by both offer blocks. French is a draft.)
+
 ---
 ## 5. The work
 **H2 EN:** The work, in public.
 **H2 FR:** Le travail, en public.
 
-**Intro EN:** Everything I do for clients, I do first for myself. Two recent posts from my own profile.
-**Intro FR:** Tout ce que je fais pour mes clients, je le fais d'abord pour moi. Deux publications récentes de mon propre profil.
+**Intro EN:** Everything I do for clients, I do first for myself. Two recent posts from my own profile, and one made for a client. (DRAFT ending, changed 11 Nov 2026 when the client post was added)
+**Intro FR:** Tout ce que je fais pour mes clients, je le fais d'abord pour moi. Deux publications récentes de mon propre profil, et une réalisée pour un client. (DRAFT ending, changed 11 Nov 2026 when the client post was added)
 
 **Post 1 title:** 4 types of writers you can hire
 **Post 1 description EN:** A carousel on who to hire for what: ghostwriter, copywriter, content writer, content strategist.
@@ -123,21 +127,73 @@ FR: Comment ça marche · Le travail · À propos · Tarifs · FAQ · Réserver 
 - Content writer: help people understand. Best for articles, guides, newsletters, case studies, educational content. Focus: education and information.
 - Content strategist: decide what you should say. Best for formats, messaging, content goals, content pillars, target audience. Focus: direction and strategy.
 
+**Post 3, client work (DRAFT strings, added 11 Nov 2026; shown with the client's permission, confirmed by the site owner):**
+- Label EN / FR: Client work / Travail client
+- Caption (both): Video Editor Hiring Checklist · Alex Oztop, DecimaLabs
+- Figures (as visible on the post screenshot, no analytics export): 70 reactions · 24 comments · 1 repost
+- Source line EN / FR: Counts as shown on the post. / Chiffres affichés sur la publication.
+- No impressions figure and no analytics date exist for this post, so none is shown.
+
 **Client quote:** [TODO: only if a real, permitted quote exists. Otherwise render nothing.]
+
+**Figures (exact, never rounded — source: LinkedIn analytics, 29 Oct 2026):**
+- Carousel EN: 20,004 impressions · 256 reactions · 65 comments · 21 reposts
+- Carousel FR: 20 004 impressions · 256 réactions · 65 commentaires · 21 reposts
+- Post EN: 10,209 impressions · 83 reactions · 48 comments · 6 reposts
+- Post FR: 10 209 impressions · 83 réactions · 48 commentaires · 6 reposts
+- Source caption EN / FR: LinkedIn analytics, 29 Oct 2026 / Statistiques LinkedIn, 29 oct. 2026
+
+**Screenshot captions (title + publication date):**
+- Carousel EN: 4 types of writers you can hire · 4 Oct 2026
+- Carousel FR: 4 types of writers you can hire · 4 oct. 2026
+- Post EN: You don't need to publish more LinkedIn content · 8 Oct 2026
+- Post FR: You don't need to publish more LinkedIn content · 8 oct. 2026
+
+**Alt text (per locale; describes topic + format, does not repeat the caption):**
+- Carousel EN: Carousel '4 types of writers you can hire' showing four writer types in cards
+- Carousel FR: Carrousel '4 types of writers you can hire' montrant quatre types de rédacteurs
+- Post EN: Text post 'You don't need to publish more LinkedIn content'
+- Post FR: Publication texte 'You don't need to publish more LinkedIn content'
+
+**Language note (shown on /fr only):** The posts are in English. / Les publications sont en anglais.
+
+**Transcription disclosure summary EN / FR:** Read the carousel as text / Lire le carrousel en texte
+(The carousel transcription is the EN original only; FR has no transcription block.)
+
+**New message keys (section 5):** work.artifacts.carousel.{title,dateISO,alt,impressions,impressionsLabel,reactions,reactionsLabel,comments,commentsLabel,reposts,repostsLabel,source,transcriptionSummary,transcription} and work.artifacts.post.{title,dateISO,alt,impressions,impressionsLabel,reactions,reactionsLabel,comments,commentsLabel,reposts,repostsLabel,source}, plus work.languageNote. All French values are drafts.
 
 ---
 ## 6. How we work
 **H2 EN:** How we work together.
 **H2 FR:** Comment nous travaillons ensemble.
 
-**01 EN:** A 30-minute call. We talk about what you do and who you want to reach. Before we speak, I review your profile.
-**01 FR:** Un appel de 30 minutes. Nous parlons de ce que vous faites et de qui vous voulez toucher. Avant de nous parler, j'analyse votre profil.
-**02 EN:** Week one: a clear profile. Your headline, About section and banner, rewritten so people understand what you do in seconds.
-**02 FR:** Semaine 1 : un profil clair. Votre titre, votre section À propos et votre bannière, réécrits pour qu'on comprenne ce que vous faites en quelques secondes.
-**03 EN:** Then: content that sounds like you. I find the topics, write the posts, design the visuals and schedule them. You give me feedback directly, as often as you need.
-**03 FR:** Ensuite : du contenu à votre image. Je trouve les sujets, j'écris les publications, je conçois les visuels et je les programme. Vous me donnez vos retours directement, aussi souvent que nécessaire.
-**04 EN:** Every month: what worked. A short report on what performs, so the next month is better than the last.
-**04 FR:** Chaque mois : ce qui a fonctionné. Un court rapport sur ce qui performe, pour que le mois suivant soit meilleur que le précédent.
+**Intro EN:** Four steps, and one person on the other end of all of them.
+**Intro FR:** Quatre étapes, et une seule personne à vos côtés de la fin.
+
+**Step 1**
+- **Title EN:** A 30-minute call.
+- **Body EN:** We talk about what you do and who you want to reach. Before we speak, I review your profile.
+- **Title FR:** Un appel de 30 minutes.
+- **Body FR:** Nous parlons de ce que vous faites et de qui vous voulez toucher. Avant de nous parler, j'analyse votre profil.
+
+**Step 2**
+- **Title EN:** Week one: a clear profile.
+- **Body EN:** Your headline, About section and banner, rewritten so people understand what you do in seconds.
+- **Title FR:** Semaine 1 : un profil clair.
+- **Body FR:** Votre titre, votre section À propos et votre bannière, réécrits pour qu'on comprenne ce que vous faites en quelques secondes.
+
+**Step 3**
+- **Title EN:** Then: content that sounds like you.
+- **Body EN:** I find the topics, write the posts, design the visuals and schedule them. You give me feedback directly, as often as you need.
+- **Title FR:** Ensuite : du contenu à votre image.
+- **Body FR:** Je trouve les sujets, j'écris les publications, je conçois les visuels et je les programme. Vous me donnez vos retours directement, aussi souvent que nécessaire.
+
+**Step 4**
+- **Title EN:** Every month: what worked.
+- **Body EN:** A short report on what performs, so the next month is better than the last.
+- **Title FR:** Chaque mois : ce qui a fonctionné.
+- **Body FR:** Un court rapport sur ce qui performe, pour que le mois suivant soit meilleur que le précédent.
+
 (Steps 2 to 4 are to be confirmed against her real process. The Profile Blueprint covers step 2 only.)
 
 ---

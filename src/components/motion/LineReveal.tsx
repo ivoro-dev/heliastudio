@@ -3,19 +3,21 @@
 /**
  * LineReveal
  *
- * Scroll-triggered, line-by-line reveal for h2 headings.
- * Each line rises out of a clip mask (overflow-hidden parent + translateY).
+ * Scroll-triggered, line-by-line reveal for section headings. Each line rises
+ * out of its own mask.
  *
- * Motion spec: docs/motion.md — "Section headings (h2): reveal once by line,
- * each line rising out of a mask, when about 85% down the viewport. Not scrubbed."
+ * Built on SplitText's own masking and autoSplit (GSAP 3.13+): the heading is
+ * re-split when fonts load or its width changes, so line breaks stay correct
+ * in English and French, and the animation is recreated in onSplit.
  *
- * Accessibility: the h2 carries an aria-label with the full unsplit text.
- * The DOM children used by SplitText become aria-hidden spans; the aria-label
- * is what screen readers announce.
+ * The masks carry padding (see .split-line-mask in globals.css) so descenders
+ * and italic overhang are never cut off at the tight heading line-height.
  *
- * SSR safety: content is fully visible without JS. The hidden initial state
- * (yPercent: 110) is only applied inside a matchMedia callback that runs
- * client-side, so the text is never gated by JavaScript.
+ * Accessibility: SplitText keeps an aria-label with the full text on the
+ * heading and hides the line elements from assistive tech.
+ *
+ * Content is never gated: nothing is hidden until this runs on the client,
+ * and it does not run at all under prefers-reduced-motion.
  */
 
 import { useRef } from "react";
@@ -24,7 +26,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 
-gsap.registerPlugin(ScrollTrigger, SplitText);
+gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
 
 interface LineRevealProps {
   children: React.ReactNode;
@@ -37,83 +39,35 @@ export default function LineReveal({ children, className }: LineRevealProps) {
   useGSAP(
     () => {
       const container = containerRef.current;
-      if (!container) return;
-
-      // Target: the first heading inside this container
-      const heading = container.querySelector<HTMLElement>(
-        "h2[data-split-target]"
+      const heading = container?.querySelector<HTMLElement>(
+        "[data-split-target]"
       );
-      if (!heading) return;
+      if (!container || !heading) return;
 
-      let split: SplitText | null = null;
-      let inners: HTMLElement[] = [];
-      let resizeTimer: ReturnType<typeof setTimeout>;
-
-      gsap.matchMedia().add(
-        "(prefers-reduced-motion: no-preference)",
-        () => {
-          function doSplit() {
-            // Revert any previous split
-            split?.revert();
-
-            split = new SplitText(heading!, {
-              type: "lines",
-              linesClass: "split-line-clip",
-              aria: "auto", // preserves aria-label on the heading
-            });
-
-            const lines = (split.lines as HTMLElement[]);
-
-            // Wrap each line's DOM children in an inner span for the transform
-            inners = lines.map((line) => {
-              const inner = document.createElement("span");
-              inner.style.display = "block";
-              while (line.firstChild) {
-                inner.appendChild(line.firstChild);
-              }
-              line.style.overflow = "hidden";
-              line.style.display = "block";
-              line.appendChild(inner);
-              return inner;
-            });
-
-            // Start hidden — below the clip
-            gsap.set(inners, { yPercent: 110 });
-
-            gsap.timeline({
+      const mm = gsap.matchMedia();
+      mm.add("(prefers-reduced-motion: no-preference)", () => {
+        const split = SplitText.create(heading, {
+          type: "lines",
+          mask: "lines",
+          linesClass: "split-line",
+          autoSplit: true,
+          onSplit(self) {
+            return gsap.from(self.lines, {
+              yPercent: 130,
+              duration: 1.1,
+              ease: "expo.out",
+              stagger: 0.09,
               scrollTrigger: {
                 trigger: container,
-                start: "top 85%",
+                start: "top 86%",
                 once: true,
               },
-            }).to(inners, {
-              yPercent: 0,
-              duration: 0.9,
-              ease: "expo.out",
-              stagger: 0.08,
             });
-          }
+          },
+        });
 
-          doSplit();
-
-          // Re-split on resize: line breaks differ between EN and FR
-          const onResize = () => {
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(() => {
-              doSplit();
-              ScrollTrigger.refresh();
-            }, 200);
-          };
-
-          window.addEventListener("resize", onResize, { passive: true });
-
-          return () => {
-            window.removeEventListener("resize", onResize);
-            clearTimeout(resizeTimer);
-            split?.revert();
-          };
-        }
-      );
+        return () => split.revert();
+      });
     },
     { scope: containerRef }
   );

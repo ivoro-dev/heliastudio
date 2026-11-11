@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# claude code: local settings and the downloaded impeccable engine binary
+.claude/settings.local.json
+.claude/skills/impeccable/scripts/bin/

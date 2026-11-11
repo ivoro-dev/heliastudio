@@ -1,11 +1,17 @@
 {
+  "meta": {
+    "title": "LinkedIn Ghostwriting & Profile Optimization | Helia Studio",
+    "description": "Done-for-you LinkedIn content and profile optimization for founders and professionals. Written and designed by Héléna Clinckart. Book a free 30-minute call."
+  },
   "nav": {
     "howItWorks": "How it works",
     "work": "The work",
     "about": "About",
     "pricing": "Pricing",
     "faq": "FAQ",
-    "bookCall": "Book a call"
+    "bookCall": "Book a call",
+    "languageLabel": "Language",
+    "menuLabel": "Sections"
   },
   "hero": {
     "h1Lead": "Your expertise, ",
@@ -49,7 +55,8 @@
     "caption": "Illustrative examples."
   },
   "offers": {
-    "h2": "Two things, done properly.",
+    "h2Lead": "Two things, ",
+    "h2Em": "done properly.",
     "offer1": {
       "title": "Your profile, rebuilt.",
       "body": "Your headline, About section and banner rewritten so it's clear what you do and who you help, and so the right people can find you.",
@@ -59,11 +66,12 @@
       "title": "Your content, done for you.",
       "body": "I find the topics, write posts that sound like you, design the visuals and schedule everything. You stay the expert. I handle the rest.",
       "includes": "Topics · Posts in your voice · Visuals · Scheduling · Monthly report"
-    }
+    },
+    "pricingLink": "See pricing"
   },
   "work": {
     "h2": "The work, in public.",
-    "intro": "Everything I do for clients, I do first for myself. Two recent posts from my own profile.",
+    "intro": "Everything I do for clients, I do first for myself. Two recent posts from my own profile, and one made for a client.",
     "post1": {
       "title": "4 types of writers you can hire",
       "description": "A carousel on who to hire for what: ghostwriter, copywriter, content writer, content strategist.",
@@ -77,14 +85,93 @@
       "date": "October 2026"
     },
     "sourceLine": "Figures from LinkedIn analytics, October 2026.",
-    "cta": "Want this for your profile? Book a call."
+    "cta": "Want this for your profile? Book a call.",
+    "artifacts": {
+      "carousel": {
+        "title": "4 types of writers you can hire",
+        "dateISO": "2026-10-04",
+        "caption": "4 types of writers you can hire · 4 Oct 2026",
+        "alt": "Carousel '4 types of writers you can hire' showing four writer types in cards",
+        "impressions": 20004,
+        "impressionsLabel": "impressions",
+        "reactions": 256,
+        "reactionsLabel": "reactions",
+        "comments": 65,
+        "commentsLabel": "comments",
+        "reposts": 21,
+        "repostsLabel": "reposts",
+        "source": "LinkedIn analytics, 29 Oct 2026",
+        "transcriptionSummary": "Read the carousel as text",
+        "transcription": [
+          {
+            "title": "Ghostwriter",
+            "body": "Write content under your name. Best for personal brands, sharing expertise, building authority, thought leadership, founders and executives' content. Focus: your ideas, voice and point of view."
+          },
+          {
+            "title": "Copywriter",
+            "body": "Make people take action. Best for websites, campaigns, sales emails, landing pages, promotional content. Focus: persuasion and conversion."
+          },
+          {
+            "title": "Content writer",
+            "body": "Help people understand. Best for articles, guides, newsletters, case studies, educational content. Focus: education and information."
+          },
+          {
+            "title": "Content strategist",
+            "body": "Decide what you should say. Best for formats, messaging, content goals, content pillars, target audience. Focus: direction and strategy."
+          }
+        ]
+      },
+      "post": {
+        "title": "You don't need to publish more LinkedIn content",
+        "dateISO": "2026-10-08",
+        "caption": "You don't need to publish more LinkedIn content · 8 Oct 2026",
+        "alt": "Text post 'You don't need to publish more LinkedIn content'",
+        "impressions": 10209,
+        "impressionsLabel": "impressions",
+        "reactions": 83,
+        "reactionsLabel": "reactions",
+        "comments": 48,
+        "commentsLabel": "comments",
+        "reposts": 6,
+        "repostsLabel": "reposts",
+        "source": "LinkedIn analytics, 29 Oct 2026"
+      },
+      "client": {
+        "label": "Client work",
+        "caption": "Video Editor Hiring Checklist · Alex Oztop, DecimaLabs",
+        "alt": "LinkedIn post by Alex Oztop with a 'Video Editor Hiring Checklist' graphic listing six points",
+        "reactions": 70,
+        "reactionsLabel": "reactions",
+        "comments": 24,
+        "commentsLabel": "comments",
+        "reposts": 1,
+        "repostsLabel": "reposts",
+        "source": "Counts as shown on the post."
+      }
+    },
+    "languageNote": "The posts are in English."
   },
   "process": {
     "h2": "How we work together.",
-    "step1": "A 30-minute call. We talk about what you do and who you want to reach. Before we speak, I review your profile.",
-    "step2": "Week one: a clear profile. Your headline, About section and banner, rewritten so people understand what you do in seconds.",
-    "step3": "Then: content that sounds like you. I find the topics, write the posts, design the visuals and schedule them. You give me feedback directly, as often as you need.",
-    "step4": "Every month: what worked. A short report on what performs, so the next month is better than the last."
+    "intro": "Four steps, and one person on the other end of all of them.",
+    "steps": [
+      {
+        "title": "A 30-minute call.",
+        "body": "We talk about what you do and who you want to reach. Before we speak, I review your profile."
+      },
+      {
+        "title": "Week one: a clear profile.",
+        "body": "Your headline, About section and banner, rewritten so people understand what you do in seconds."
+      },
+      {
+        "title": "Then: content that sounds like you.",
+        "body": "I find the topics, write the posts, design the visuals and schedule them. You give me feedback directly, as often as you need."
+      },
+      {
+        "title": "Every month: what worked.",
+        "body": "A short report on what performs, so the next month is better than the last."
+      }
+    ]
   },
   "about": {
     "h2": "You work with me. Directly.",
@@ -151,7 +238,7 @@
       "privacy": "Privacy policy",
       "legal": "Legal notice"
     },
-    "copyright": "© 2026 Helia Studio"
+    "copyright": "© 2026 Helia Studio",
+    "backToTop": "Back to top"
   }
 }
-

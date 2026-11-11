@@ -64,7 +64,9 @@ Acceptance: pin works on desktop only, releases cleanly, causes no layout shift.
 
 ## M5. What I do and The work
 Docs: copy.md (sections 4 and 5), structure.md (notes 4 and 5), motion.md (supporting effect A).
-Acceptance: the two offers are ruled blocks, not cards. Screenshots are her real images with correct alt text, figures, dates and source line. The carousel transcription is real text. No client logo or quote anywhere unless the docs say so.
+- Section 4 (What I do): COMPLETE — two ruled offers block (see src/components/sections/Offers.tsx). Hairlines and spacing only, no cards/icons/boxes/buttons/green fill, next-intl copy verbatim, quiet "See pricing" link to #pricing, static (no new motion).
+- Section 5 (The work): COMPLETE — two real artifacts as uncropped screenshots (public/assets/post-2.png carousel, post-3.png post), exact figures formatted via Intl.NumberFormat per locale, source/date captions, hairline-separated dl figures, native <details> transcription (EN only), French language note, screenshot-only translateY parallax on desktop (no reduced motion), static state complete without JS. No cards/icons/boxes/shadows/green/no testimonials.
+Acceptance: both sections are ruled blocks / real artifacts, not cards. Screenshots are her real images with correct alt text, exact figures and source/date in both locales' formatting. The carousel transcription is real text in the DOM. No client logo, quote, or invented numbers. Build and lint pass.
 
 ## M6. How we work and About
 Docs: copy.md (sections 6 and 7), motion.md (supporting effect B).

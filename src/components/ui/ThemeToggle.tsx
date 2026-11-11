@@ -40,7 +40,7 @@ export default function ThemeToggle() {
       aria-checked={isDark}
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
       onClick={toggleTheme}
-      className="relative flex items-center w-[66px] h-8 rounded-full border border-hairline bg-surface p-1 cursor-pointer transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+      className="relative flex items-center w-[66px] h-8 rounded-none border border-hairline bg-surface p-1 cursor-pointer transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
       style={{
         boxShadow: isDark
           ? "inset 0 2px 4px rgba(0, 0, 0, 0.45)"
@@ -99,7 +99,7 @@ export default function ThemeToggle() {
 
       {/* Sliding Knob */}
       <span
-        className={`relative z-10 block w-6 h-6 rounded-full transition-all duration-300 ease-out ${
+        className={`relative z-10 block w-6 h-6 rounded-none transition-all duration-300 ease-out ${
           isDark
             ? "translate-x-0 bg-ink shadow-[0_2px_4px_rgba(0,0,0,0.5)]"
             : "translate-x-[34px] bg-white shadow-[0_2px_5px_rgba(7,11,8,0.18)] border border-hairline"

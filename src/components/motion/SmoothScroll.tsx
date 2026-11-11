@@ -28,7 +28,9 @@ export default function SmoothScroll({
       gestureOrientation: "vertical",
       smoothWheel: true,
       wheelMultiplier: 1,
-      touchMultiplier: 2,
+      syncTouch: false,
+      // In-page anchors scroll through Lenis, clear of the fixed header.
+      anchors: { offset: -96 },
     });
 
     lenisRef.current = lenis;

@@ -83,7 +83,7 @@ export default function ProblemSection({ locale = "en" }: ProblemSectionProps) {
       aria-labelledby="problem-heading"
       style={{ paddingTop: "var(--section-py)", paddingBottom: "var(--section-py)" }}
     >
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 
         {/* ── 12-column grid ──────────────────────────────────────────────
             Desktop: 12 equal columns, 24px gap.
@@ -159,7 +159,7 @@ export default function ProblemSection({ locale = "en" }: ProblemSectionProps) {
               }}
             >
               {closingParts.plain} <br />
-              <em className="italic text-brand">{closingParts.italic}</em>
+              <em className="italic text-brand-text">{closingParts.italic}</em>
             </p>
           </div>
 

@@ -49,8 +49,9 @@ Idea: from vague to clear, shown rather than told.
 - Mobile, short screens, reduced motion, no JavaScript: no pin. Stack in order — three rows, each with BEFORE struck through by a static full-width line at 25% opacity, its note, and the AFTER at full strength — left aligned, one column. With motion allowed, each row's AFTER gets one simple reveal when it enters the viewport; otherwise simply visible.
 
 ## Supporting effect A: Posts as artifacts (The work)
-- The two screenshots sit offset on the grid. On desktop each drifts with a very small parallax (about 4 to 8%, transform only, scrubbed). Each post's figures reveal by line when the post enters. No count-up numbers.
-- Mobile and reduced motion: no parallax, figures are simply visible.
+- The two screenshots sit offset on the grid. On desktop each drifts with a very small parallax (translateY only, a few percent of the element height, never more than ~40px of travel, scrubbed). The parallax moves the screenshots only — never text, figures or the transcription.
+- Mobile and reduced motion: no parallax; screenshots and figures are simply visible in a complete static layout. No fade-up, no stagger, no hover on the screenshots.
+- Content is visible without JavaScript (js class and motion-failed failsafe). ScrollTrigger instances are killed and reverted on unmount and on breakpoint change (gsap.matchMedia context).
 
 ## Supporting effect B: The drawn line (How we work)
 - A vertical hairline in brand-text colour scales from 0 to 1 (scaleY, scrubbed) along the four steps. Each step's numeral goes from about 20% to full opacity as the line reaches it.

@@ -55,7 +55,9 @@ export default function ShiftSection({ locale = "en" }: ShiftSectionProps) {
   // `js` class enables the pre-paint hidden states in globals.css. Added
   // client-side before first paint so nothing flashes visible then hidden.
   useLayoutEffect(() => {
-    document.documentElement.classList.add("js");
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      document.documentElement.classList.add("js");
+    }
   }, []);
 
   useGSAP(
@@ -256,7 +258,7 @@ export default function ShiftSection({ locale = "en" }: ShiftSectionProps) {
         paddingBottom: "var(--section-py)",
       }}
     >
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* ── Intro (normal flow) ────────────────────────────────────────── */}
         <div className="grid grid-cols-1 lg:grid-cols-12 lg:gap-x-6">
           <div className="lg:col-start-1 lg:col-span-8">
@@ -295,7 +297,7 @@ export default function ShiftSection({ locale = "en" }: ShiftSectionProps) {
                 return (
                   <li
                     key={i}
-                    className="border-b border-hairline last:border-b-0 lg:border-hairline lg:grid lg:grid-cols-12 lg:grid-rows-2 lg:gap-y-4 lg:items-start"
+                    className="border-b border-hairline last:border-b-0 lg:border-hairline pb-6 lg:pb-[clamp(0.75rem,3vh,1.75rem)] lg:grid lg:grid-cols-12 lg:grid-rows-[auto_auto] lg:gap-y-4 lg:items-start"
                   >
                     {/* BEFORE — row 1, cols 1–10. Wrapper bounds strike to text width. */}
                     <div className="lg:col-start-1 lg:col-span-10 lg:row-start-1">
@@ -340,7 +342,7 @@ export default function ShiftSection({ locale = "en" }: ShiftSectionProps) {
                         className="font-serif font-normal text-ink mb-0"
                         style={{
                           fontSize: "clamp(1.75rem, min(3.6vw, 5.5vh), 3.25rem)",
-                          lineHeight: "var(--text-h2--line-height, 1.0)",
+                          lineHeight: 1.1,
                           letterSpacing:
                             "var(--text-h2--letter-spacing, -0.015em)",
                           textWrap: "balance",

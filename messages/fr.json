@@ -1,11 +1,17 @@
 {
+  "meta": {
+    "title": "Ghostwriting LinkedIn & optimisation de profil | Helia Studio",
+    "description": "Contenu LinkedIn clé en main et optimisation de profil pour fondateurs et experts. Par Héléna Clinckart. Réservez un appel gratuit de 30 minutes."
+  },
   "nav": {
     "howItWorks": "Comment ça marche",
     "work": "Le travail",
     "about": "À propos",
     "pricing": "Tarifs",
     "faq": "FAQ",
-    "bookCall": "Réserver un appel"
+    "bookCall": "Réserver un appel",
+    "languageLabel": "Langue",
+    "menuLabel": "Sections"
   },
   "hero": {
     "h1Lead": "Votre expertise, ",
@@ -49,7 +55,8 @@
     "caption": "Exemples illustratifs."
   },
   "offers": {
-    "h2": "Deux choses, bien faites.",
+    "h2Lead": "Deux choses, ",
+    "h2Em": "bien faites.",
     "offer1": {
       "title": "Votre profil, repensé.",
       "body": "Votre titre, votre section À propos et votre bannière réécrits pour qu'on comprenne ce que vous faites et qui vous aidez, et pour que les bonnes personnes vous trouvent.",
@@ -59,11 +66,12 @@
       "title": "Votre contenu, clé en main.",
       "body": "Je trouve les sujets, j'écris des publications qui vous ressemblent, je conçois les visuels et je programme le tout. Vous restez l'expert. Je m'occupe du reste.",
       "includes": "Sujets · Publications à votre image · Visuels · Programmation · Rapport mensuel"
-    }
+    },
+    "pricingLink": "Voir les tarifs"
   },
   "work": {
     "h2": "Le travail, en public.",
-    "intro": "Tout ce que je fais pour mes clients, je le fais d'abord pour moi. Deux publications récentes de mon propre profil.",
+    "intro": "Tout ce que je fais pour mes clients, je le fais d'abord pour moi. Deux publications récentes de mon propre profil, et une réalisée pour un client.",
     "post1": {
       "title": "4 types of writers you can hire",
       "description": "Un carrousel sur le bon profil à recruter selon le besoin : ghostwriter, copywriter, rédacteur de contenu, stratège de contenu.",
@@ -77,14 +85,76 @@
       "date": "octobre 2026"
     },
     "sourceLine": "Chiffres issus des statistiques LinkedIn, octobre 2026.",
-    "cta": "Vous voulez la même chose pour votre profil ? Réservez un appel."
+    "cta": "Vous voulez la même chose pour votre profil ? Réservez un appel.",
+    "artifacts": {
+      "carousel": {
+        "title": "4 types of writers you can hire",
+        "dateISO": "2026-10-04",
+        "caption": "4 types of writers you can hire · 4 oct. 2026",
+        "alt": "Carrousel '4 types of writers you can hire' montrant quatre types de rédacteurs",
+        "impressions": 20004,
+        "impressionsLabel": "impressions",
+        "reactions": 256,
+        "reactionsLabel": "réactions",
+        "comments": 65,
+        "commentsLabel": "commentaires",
+        "reposts": 21,
+        "repostsLabel": "reposts",
+        "source": "Statistiques LinkedIn, 29 oct. 2026",
+        "transcriptionSummary": "Lire le carrousel en texte",
+        "transcription": []
+      },
+      "post": {
+        "title": "You don't need to publish more LinkedIn content",
+        "dateISO": "2026-10-08",
+        "caption": "You don't need to publish more LinkedIn content · 8 oct. 2026",
+        "alt": "Publication texte 'You don't need to publish more LinkedIn content'",
+        "impressions": 10209,
+        "impressionsLabel": "impressions",
+        "reactions": 83,
+        "reactionsLabel": "réactions",
+        "comments": 48,
+        "commentsLabel": "commentaires",
+        "reposts": 6,
+        "repostsLabel": "reposts",
+        "source": "Statistiques LinkedIn, 29 oct. 2026"
+      },
+      "client": {
+        "label": "Travail client",
+        "caption": "Video Editor Hiring Checklist · Alex Oztop, DecimaLabs",
+        "alt": "Publication LinkedIn d'Alex Oztop avec un visuel 'Video Editor Hiring Checklist' en six points",
+        "reactions": 70,
+        "reactionsLabel": "réactions",
+        "comments": 24,
+        "commentsLabel": "commentaires",
+        "reposts": 1,
+        "repostsLabel": "reposts",
+        "source": "Chiffres affichés sur la publication."
+      }
+    },
+    "languageNote": "Les publications sont en anglais."
   },
   "process": {
     "h2": "Comment nous travaillons ensemble.",
-    "step1": "Un appel de 30 minutes. Nous parlons de ce que vous faites et de qui vous voulez toucher. Avant de nous parler, j'analyse votre profil.",
-    "step2": "Semaine 1 : un profil clair. Votre titre, votre section À propos et votre bannière, réécrits pour qu'on comprenne ce que vous faites en quelques secondes.",
-    "step3": "Ensuite : du contenu à votre image. Je trouve les sujets, j'écris les publications, je conçois les visuels et je les programme. Vous me donnez vos retours directement, aussi souvent que nécessaire.",
-    "step4": "Chaque mois : ce qui a fonctionné. Un court rapport sur ce qui performe, pour que le mois suivant soit meilleur que le précédent."
+    "intro": "Quatre étapes, et une seule personne à vos côtés de la fin.",
+    "steps": [
+      {
+        "title": "Un appel de 30 minutes.",
+        "body": "Nous parlons de ce que vous faites et de qui vous voulez toucher. Avant de nous parler, j'analyse votre profil."
+      },
+      {
+        "title": "Semaine 1 : un profil clair.",
+        "body": "Votre titre, votre section À propos et votre bannière, réécrits pour qu'on comprenne ce que vous faites en quelques secondes."
+      },
+      {
+        "title": "Ensuite : du contenu à votre image.",
+        "body": "Je trouve les sujets, j'écris les publications, je conçois les visuels et je les programme. Vous me donnez vos retours directement, aussi souvent que nécessaire."
+      },
+      {
+        "title": "Chaque mois : ce qui a fonctionné.",
+        "body": "Un court rapport sur ce qui performe, pour que le mois suivant soit meilleur que le précédent."
+      }
+    ]
   },
   "about": {
     "h2": "Vous travaillez avec moi. Directement.",
@@ -151,7 +221,7 @@
       "privacy": "Politique de confidentialité",
       "legal": "Mentions légales"
     },
-    "copyright": "© 2026 Helia Studio"
+    "copyright": "© 2026 Helia Studio",
+    "backToTop": "Retour en haut"
   }
 }
-

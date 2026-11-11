@@ -5,9 +5,12 @@ Next.js 16 (App Router), React 19, Tailwind 4, TypeScript. One bilingual (EN/FR)
 Names, always spelled exactly: the person is "Héléna Clinckart" (both accents), the brand is "Helia Studio". Never "Hela", never "Helena" in visible copy, titles, metadata or schema.
 
 ## Before any task
-Read these every time: docs/brief.md, docs/design-direction.md, docs/structure.md.
-Then, depending on the task: docs/copy.md (any text), docs/motion.md (any animation), docs/seo-aeo-geo.md (metadata, schema, routing), docs/build-plan.md (what to do and in which order).
-Do not fall back on your own idea of what a landing page looks like. If the docs and your instinct disagree, the docs win.
+Read these every time: PRODUCT.md, docs/brief.md, docs/design-direction.md (Themes and Typography sections), docs/structure.md (section order, anchors, navigation and call to action rules).
+Then, depending on the task: docs/copy.md (any text), docs/seo-aeo-geo.md (metadata, schema, routing), docs/build-plan.md (what to do and in which order).
+
+## Who decides what (set 11 Nov 2026)
+- The docs are binding for: theme, fonts, copy, facts, section order, SEO, accessibility and code rules. If the docs and your instinct disagree on these, the docs win.
+- Layout, section design and motion are led by the Impeccable skill (.claude/skills/impeccable). Use it for any design work. The layout notes in docs/design-direction.md and docs/structure.md, the forbidden list, and docs/motion.md are reference only; where they disagree with Impeccable, Impeccable wins.
 
 ## How to work
 - One section or one concern per task. Never build the whole page at once.
@@ -18,18 +21,16 @@ Do not fall back on your own idea of what a landing page looks like. If the docs
 - If a doc is ambiguous or missing something, stop and ask. Do not guess.
 - When finished, report: files changed, what you were unsure about, and what you did not do.
 
-## Design rules (full list in docs/design-direction.md)
+## Theme and fonts (binding; details in docs/design-direction.md)
 - Fonts: DM Serif Display for headlines, DM Sans for everything else. DM Serif Display has one weight: never apply bold or semibold to it.
-- Colors, type scale and spacing come from tokens in globals.css (@theme). No hard-coded values in components.
+- Colors come from tokens in globals.css (@theme). No hard-coded values in components.
 - Two designed themes (dark and light) via a data-theme attribute and a pre-paint script. No theme library.
-- Forbidden: gradient text, glow or blur orbs, grid or dot backgrounds, glassmorphism, marquee tickers, eyebrow pills above headings, three equal feature cards, icons in circles, check-mark lists in rounded boxes, counter-stat rows, fake dashboards or scores, "trusted by" strips, emoji, fade-up on everything, hover-scale on everything.
+- No emoji (this is a copy rule and stays).
 
-## Motion rules (full spec in docs/motion.md)
-- GSAP + ScrollTrigger for scroll animation, Lenis for smooth scroll, wired to the GSAP ticker.
-- Animate transform and opacity only. Nothing that shifts layout. No animated blur, filter or box-shadow.
-- prefers-reduced-motion: no smooth scroll, no scrub, no parallax. Content simply appears.
+## Motion (design led by Impeccable; these technical rules stay)
+- Libraries: GSAP + ScrollTrigger and Lenis only. Use useGSAP so everything is cleaned up on unmount.
+- prefers-reduced-motion is respected: content simply appears.
 - All content exists in the server-rendered HTML and stays visible if JavaScript fails. Animation enhances visible content; it never gates it.
-- Use useGSAP so everything is cleaned up on unmount. Use gsap.matchMedia for breakpoints and reduced motion.
 
 ## Code rules
 - Server Components by default. "use client" only for interactive or animated wrappers.

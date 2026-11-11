@@ -11,6 +11,8 @@
   --brand: #62d468;
   --brand-text: #62d468;
   --surface: #0e1510;
+  --ink-on-brand: #070b08;
+  --brand-contrast: #ebf3ea;
 
   --scrollbar-thumb: rgba(235, 243, 234, 0.2);
   --scrollbar-thumb-hover: rgba(235, 243, 234, 0.35);
@@ -27,6 +29,8 @@
   --brand: #62d468;
   --brand-text: #62d468;
   --surface: #0e1510;
+  --ink-on-brand: #070b08;
+  --brand-contrast: #ebf3ea;
 
   --scrollbar-thumb: rgba(235, 243, 234, 0.2);
   --scrollbar-thumb-hover: rgba(235, 243, 234, 0.35);
@@ -43,6 +47,8 @@
   --brand: #62d468;
   --brand-text: #1e7a35; /* Verified > 4.5:1 contrast against #ebf3ea */
   --surface: #e1ebe0;
+  --ink-on-brand: #070b08;
+  --brand-contrast: #ebf3ea;
 
   --scrollbar-thumb: rgba(7, 11, 8, 0.2);
   --scrollbar-thumb-hover: rgba(7, 11, 8, 0.35);
@@ -62,6 +68,8 @@
   --color-brand: var(--brand);
   --color-brand-text: var(--brand-text);
   --color-surface: var(--surface);
+  --color-ink-on-brand: var(--ink-on-brand);
+  --color-brand-contrast: var(--brand-contrast);
 
   --text-display: clamp(3.25rem, 9vw, 9rem);
   --text-display--line-height: 0.95;
@@ -85,6 +93,7 @@
 
 /* Base Document Styles */
 html {
+  scroll-padding-top: 6rem;
   background-color: var(--paper);
   color: var(--ink);
   font-family: var(--font-sans);
@@ -157,7 +166,7 @@ body {
     opacity: 0;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 767px) and (prefers-reduced-motion: no-preference) {
   /* With JS + motion, AFTER words and notes start hidden, then reveal on enter. */
   .js [data-shift="after-word"],
   .js [data-shift="note"],
@@ -192,5 +201,102 @@ html.lenis body {
   html.lenis,
   html.lenis body {
     scroll-behavior: auto !important;
+  }
+}
+
+/* Work section: disclosure affordance (plus/minus swap). */
+details .work-details-toggle::after {
+  content: "+";
+}
+
+details[open] .work-details-toggle::after {
+  content: "-";
+}
+
+/* Browser surfaces themed from the palette. */
+::selection {
+  background: var(--brand);
+  color: var(--ink-on-brand);
+}
+
+/* FAQ: native <details>, answers always in the DOM. The mark is two drawn
+   lines; the vertical one folds away when the item is open. */
+.faq-item > summary {
+  list-style: none;
+}
+.faq-item > summary::-webkit-details-marker {
+  display: none;
+}
+.faq-mark::before,
+.faq-mark::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1.5px;
+  background: currentColor;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.faq-mark::after {
+  transform: rotate(90deg);
+}
+.faq-item[open] .faq-mark::after {
+  transform: rotate(0deg);
+}
+@supports (interpolate-size: allow-keywords) {
+  @media (prefers-reduced-motion: no-preference) {
+    .faq-item {
+      interpolate-size: allow-keywords;
+    }
+    .faq-item::details-content {
+      block-size: 0;
+      overflow: clip;
+      transition: block-size 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+        content-visibility 0.45s allow-discrete;
+    }
+    .faq-item[open]::details-content {
+      block-size: auto;
+    }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .faq-mark::before,
+  .faq-mark::after {
+    transition: none;
+  }
+}
+
+/* Line masks. Headings run at a line-height of about 1, tighter than the
+   font's own descent, so a mask the size of the line box would cut off
+   descenders and italic overhang. Each mask is padded outward and pulled
+   back with an equal negative margin: the clip area grows, layout does not. */
+.split-line-mask,
+.hero-mask {
+  padding: 0.1em 0.2em 0.3em;
+  margin: -0.1em -0.2em -0.3em;
+}
+.hero-mask {
+  display: block;
+  overflow: clip;
+}
+
+/* Hero: held invisible until HeroMotion applies its start states, only when
+   JavaScript is running and motion is allowed. The failsafe releases it. */
+@media (prefers-reduced-motion: no-preference) {
+  .js:not(.motion-failed) [data-hero]:not([data-ready]) {
+    visibility: hidden;
+  }
+}
+
+/* Preloader: only ever shown when JavaScript is running and motion is
+   allowed. Without JS, under reduced motion, or when the failsafe trips,
+   it does not render and the page is simply there. */
+.preloader {
+  display: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .js:not(.motion-failed) .preloader {
+    display: flex;
   }
 }
